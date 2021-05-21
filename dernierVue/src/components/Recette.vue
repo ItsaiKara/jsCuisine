@@ -28,8 +28,8 @@
       <div v-else-if="this.$route.params.md == 't'">
         <b-container class="">
           <b-row>
-            <b-col><Etapes></Etapes></b-col>
             <b-col><Ingredients></Ingredients></b-col>
+            <b-col><Etapes></Etapes></b-col>
           </b-row>
         </b-container>
       </div>
@@ -43,7 +43,7 @@
 
 <script>
 import '@/store/index'
-import Ingredients from "@/views/Ingredients";
+import Ingredients from "@/components/Ingredients";
 import Etapes from "@/components/Etapes";
 import axios from "axios";
 export default {

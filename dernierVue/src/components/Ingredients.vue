@@ -1,24 +1,22 @@
 <template>
-<div class="etapes container-fluid text-justify">
-  <ul class="list-group">
-    <li class="list-group-item"> <strong>Liste des étapes a suivre</strong></li>
-    <li class="list-group-item" v-for="(key, val) in this.etape" :key="key">
-      <label class="list-group-item">
-        <input class="form-check-input me-1" type="checkbox" value="">
-        {{ val+1 }}. {{key}}
-      </label>
-    </li>
-  </ul>
-  <div class="container">
+  <div class="Ingredients container-fluid text-left">
+    <ul class="list-group">
+      <li class="list-group-item"> <strong>Liste des ingédients</strong></li>
+      <li class="list-group-item" v-for="str in ingre" :key="str">
+        <label class="list-group-item">
+          <input class="form-check-input me-1" type="checkbox" value="">
+          {{ str }}
+        </label>
+      </li>
+    </ul>
   </div>
-</div>
 </template>
 
 <script>
-import '@/store'
 import axios from "axios";
+
 export default {
-  name: "etapes",
+name: "Ingredients",
   data(){
     return {
       recettes : [],
@@ -37,7 +35,7 @@ export default {
         })
         .finally(() => this.loading = false)
   },
-  computed: {
+  computed : {
     recette() {
       for (var el in this.recettes) {
         if (this.recettes[el].id == this.$route.params.id) {
@@ -46,20 +44,15 @@ export default {
       }
       return 1
     },
-    etape () {
+    ingre () {
       for (var el in this.recettes){
-        return this.recette.etapes.split("; ")
-        /*
-        if (this.recettes[el].id == this.$route.params.id){
-          return this.recettes[el].ingredients.split("; ")
-        }*/
+        return this.recette.ingredients.split("; ")
       }
       return 1
     }
-  },
+  }
 }
 </script>
 
 <style scoped>
-
 </style>

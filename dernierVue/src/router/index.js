@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from "@/views/Home";
 import Etapes from "../components/Etapes";
-import Ingredients from "@/views/Ingredients";
+import Ingredients from "@/components/Ingredients";
 import Recette from "@/components/Recette";
 import ListeRecettes from "@/views/ListeRecettes";
 
